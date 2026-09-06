@@ -4,17 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Store | Panel Cliente</title>
+    <title>Food Store | Catálogo</title>
+
 </head>
 
 <body>
-    <main class="panel">
-        <h1>Food Store</h1>
-        <h2> Área de Clientes</h2>
-        <p>Accediste correctamente como cliente</p>
-        <button id="logoutButton">Cerrar sesión</button>
+    <header>
+        <h1>
+            Food Store 
+        </h1>
+
+        <nav>
+            <a href="./home.html"> Inicio </a>
+            <a href="../cart/cart.html"> Carrito</a>
+            <a href="./home.html">Catálogo</a>
+            <button id="logoutButton">Cerrar sesión</button>
+
+        </nav>
+    </header>
+
+    <main class="catalogoLayout">
+        <aside class="menuCategorias">
+            <h2>Categorías</h2>
+
+            <button id="mostrarTodos" type="button">
+                Todos los productos
+            </button>
+
+            <div id="contenedorCategorias"></div>
+
+        </aside>
+        
+        
+        <section class="contenidoCatalogo">
+            <label for="buscador">Buscar productos</label>
+            <input type="text" id="buscador" placeholder="Buscar productos..." />
+            <p id="mensajeProductos"></p>
+            <div id="contenedorProductos"></div>
+        </section>
+
     </main>
-    
+       
     <script type="module" src="./home.ts"></script>
 
     <footer>&copy; Mi pagina web - FOOD STORE</footer>
