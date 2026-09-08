@@ -1,6 +1,7 @@
 
 import type{ICartItem, IProduct } from "../types/product";
 
+
 const CART_KEY = "cart";
 
 // Función que obtiene los ítems guardados del carrito 
@@ -64,3 +65,23 @@ export const actualizarCantidad = (idProducto : number, nuevaCantidad: number) :
     }
 }
     
+
+// Función para eliminar un producto del carrito
+
+export const eliminarProductoCarrito = (idProducto : number): void =>{
+    const carrito = obtenerCarrito();
+
+    const carritoActualizado  = carrito.filter ((item)=> {
+      
+         return item.producto.id !== idProducto;   
+      });
+
+    guardarCarrito(carritoActualizado);
+      
+};
+
+// Función para vaciar carrito
+
+export const vaciarCarrito = (): void =>{
+    guardarCarrito([]);
+};
