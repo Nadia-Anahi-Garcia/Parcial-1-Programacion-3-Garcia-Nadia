@@ -50,17 +50,17 @@ const dibujarCarrito = () :void => {
         const subtotalItem = item.producto.precio * item.cantidad;
         card.innerHTML = ` 
             <img src="${item.producto.imagen}" alt="${item.producto.nombre}">
-            <div>
-            <h3>${item.producto.nombre}</h3>
-            <p>Precio: $${item.producto.precio}</p>
-            <p>Subtotal: $${subtotalItem}</p>
-
-            <button type="button" class="btn-restar">−</button>
-            <span>${item.cantidad}</span>
-            <button type="button" class="btn-sumar">+</button>
-            <button type="button" class="btn-eliminar">Eliminar</button>
+            <div class="informacion-item">
+                <h3>${item.producto.nombre}</h3>
+                <p>Precio: $${item.producto.precio}</p>
+                 <p class= "subtotal-item">Subtotal: $${subtotalItem}</p>
             </div>
-
+            <div class="controles-cantidad">
+                <button type="button" class="btn-restar">−</button>
+                <span>${item.cantidad}</span>
+                <button type="button" class="btn-sumar">+</button>
+            </div>
+            <button type="button" class="btn-eliminar">Eliminar</button>
         `;
         const botonRestar = card.querySelector(".btn-restar") as HTMLButtonElement;
         const botonSumar = card.querySelector(".btn-sumar") as HTMLButtonElement;

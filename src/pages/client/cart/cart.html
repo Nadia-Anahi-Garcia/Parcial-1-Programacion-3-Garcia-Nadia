@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Store | Carrito</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
 </head>
 <body>
    
     <header>
         
-        <h1>Food Store</h1>
-        <nav>
-            <a href="../home/home.html">Catálogo</a>
-            <a href="./cart.html">Carrito</a>
-            <button id="logoutButton">Cerrar sesión</button>
+        <div class="marca">
+            <img src="/assets/icono-food-store.png" alt="Logo de Food Store">
+            <h1>Food Store</h1>
+        </div>
+
+        <nav class="menu-principal">
+            <a href="../home/home.html">
+                <span class="material-symbols-outlined">home</span>
+                Inicio
+            </a>
+
+            <a href="./cart.html">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Carrito
+            </a>
+
+            <a href="../home/home.html">
+                <span class="material-symbols-outlined">storefront</span>
+                Catálogo
+            </a>
+
+             <button id="logoutButton">Cerrar sesión</button>
         </nav>
 
     </header>
@@ -38,12 +58,12 @@
                     <strong>Total</strong>
                     <strong id="totalCarrito">$0</strong>
                 </div>
-
+                
                 <button type="button" id="finalizarCompra" disabled>
                 Finalizar compra
-                </button
-
-                <p> Función no disponible en este momento </p>
+                </button>
+                
+                <p id="aviso"> Función no disponible en este momento </p>
 
                 <button type="button" id="vaciarCarrito">
                 Vaciar carrito
