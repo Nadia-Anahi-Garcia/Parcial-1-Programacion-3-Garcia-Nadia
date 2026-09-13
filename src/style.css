@@ -266,11 +266,18 @@ button:hover{
   margin-bottom: 1rem;
 }
 
-#mensajeProductos,
+
 #mensajeCarrito {
   margin-bottom: 1rem;
   text-align: center;
   font-weight: bold;
+}
+
+#mensajeProductos {
+  margin: 8px 0 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
 }
 
 #contenedorProductos {

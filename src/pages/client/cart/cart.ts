@@ -14,6 +14,7 @@ const subtotalCarrito = document.getElementById("subtotalCarrito")!;
 const totalCarrito = document.getElementById("totalCarrito")!;
 const botonVaciarCarrito = document.getElementById("vaciarCarrito") as HTMLButtonElement;
 
+
 // Evento para cerrar sesión
 const buttonLogout = document.getElementById(
   "logoutButton"

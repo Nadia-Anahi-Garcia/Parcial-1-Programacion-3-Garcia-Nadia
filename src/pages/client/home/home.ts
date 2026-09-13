@@ -19,6 +19,8 @@ const contenedorCategorias = document.getElementById("contenedorCategorias")!;
 const contenedorProductos = document.getElementById("contenedorProductos" )!;
 const buscador = document.getElementById("buscador" )as HTMLInputElement;
 const botonMostrarTodos = document.getElementById("mostrarTodos") as HTMLButtonElement;
+const mensajeProductos= document.getElementById ("mensajeProductos") as HTMLParagraphElement;
+
 
 // Guarda la categoría seleccionada para aplicar el filtro
 // Creás categoriaActiva con let porque cambia al hacer clic. 
@@ -62,7 +64,8 @@ const dibujarCategorias = () : void =>{
 
 const dibujarProductos = () : void => {
   contenedorProductos.innerHTML = "";
-  
+  const textoBuscado = buscador.value.trim();
+
   const productos = PRODUCTS.filter ((producto)=> {
     const coincide_producto = 
     categoria_Activa === null || 
@@ -75,6 +78,19 @@ const dibujarProductos = () : void => {
 
     return coincide_producto && coince_nombre
   });
+
+  /* Si se ingresa un texto se valida que si no está vacio y no hay coincidencias
+   le avise. Caso contratio si las las hay arroja cuantas. */
+
+  if (textoBuscado !== "") { 
+    if (productos.length === 0){
+        mensajeProductos.textContent = `No hay coincidencias para  "${textoBuscado}".`;
+    } else{
+        mensajeProductos.textContent = `Búsqueda: "${textoBuscado}" - ${productos.length} resultado(s)`; 
+    }
+  } else{
+    mensajeProductos.textContent = "";
+  };
 
   productos.forEach((producto)=> {
     const card = document.createElement("div");
@@ -89,6 +105,7 @@ const dibujarProductos = () : void => {
     const botonAgregar = card.querySelector(".btn-agregar") as HTMLButtonElement;
     botonAgregar.addEventListener("click", () =>{
       agregarProductoAlCarrito(producto);
+      alert(`${producto.nombre} se agregó exitosamente al carrito.`);
     });
     contenedorProductos.appendChild(card);  
   });

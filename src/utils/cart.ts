@@ -55,6 +55,11 @@ export const calcularTotalCarrito = () : number =>{
 // Función para actualizar la cantidad. 
 
 export const actualizarCantidad = (idProducto : number, nuevaCantidad: number) : void => {
+    
+    if(nuevaCantidad <= 0){
+        eliminarProductoCarrito(idProducto);
+        return;
+    }
     const carrito = obtenerCarrito();
     const itemEncontrado = carrito.find((item) => {
         return item.producto.id === idProducto
