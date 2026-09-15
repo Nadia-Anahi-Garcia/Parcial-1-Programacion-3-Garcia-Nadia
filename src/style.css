@@ -239,6 +239,7 @@ button:hover{
   text-align: left;
 }
 
+
 .categoria-btn {
   background-color: transparent;
   color: var(--color--texto);
@@ -248,8 +249,7 @@ button:hover{
   background-color: #ffe4dc;
 }
 
-.btn-activo,
-#mostrarTodos {
+.btn-activo{
   background-color: var(--color--primario);
   color: var(--color--blanco);
 }

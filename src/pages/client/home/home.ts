@@ -27,10 +27,18 @@ const mensajeProductos= document.getElementById ("mensajeProductos") as HTMLPara
 // Puede guardar una ICategoria o null si todavía no hay ninguna seleccionada.
 let categoria_Activa : ICategoria | null= null;
 
-// vacía el contenedor para evitar duplicados.
+// Mostrar las categorías
 const dibujarCategorias = () : void =>{
+  // Limpiar el contenedor 
     contenedorCategorias.innerHTML = "";
 
+    if (categoria_Activa === null) {
+       botonMostrarTodos.className = "btn-activo";
+    } else {
+      botonMostrarTodos.className = "categoria-btn";
+    }
+
+    
     // Guarda el array con todas las categorias disponibles
     const categorias = getCategories();
 
@@ -61,9 +69,10 @@ const dibujarCategorias = () : void =>{
 
 };
 
-
+// Muestra las tarjetas de los productos 
 const dibujarProductos = () : void => {
   contenedorProductos.innerHTML = "";
+
   const textoBuscado = buscador.value.trim();
 
   const productos = PRODUCTS.filter ((producto)=> {
